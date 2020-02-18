@@ -44,19 +44,20 @@ public class NEnglishApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		Association association = aService.request(strPesquisa);
+		
 		System.out.println(association);
 
-		Definition definition = dService.request(strPesquisa);
-		System.out.println(definition);
-
-		Example example = eService.request(strPesquisa);
-		System.out.println(example);
-
-		Theme theme = tService.request(strPesquisa);
-		System.out.println(theme);
-
-		Reference reference = rService.request(strPesquisa);
-		System.out.println(reference);
+//		Definition definition = dService.request(strPesquisa);
+//		System.out.println(definition);
+//
+//		Example example = eService.request(strPesquisa);
+//		System.out.println(example);
+//
+//		Theme theme = tService.request(strPesquisa);
+//		System.out.println(theme);
+//
+//		Reference reference = rService.request(strPesquisa);
+//		System.out.println(reference);
 
 	}
 
