@@ -1,14 +1,14 @@
 package com.nexapps.nenglish.domain;
 
 import java.io.Serializable;
-import java.util.Map;
+import java.util.List;
 
 public class Example implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String entry;
 	
-	private Map<String, String> example;
+	private List<String> example;
 
 	public String getEntry() {
 		return entry;
@@ -18,12 +18,24 @@ public class Example implements Serializable {
 		this.entry = entry;
 	}
 
-	public Map<String, String> getExample() {
+	public List<String> getExample() {
 		return example;
 	}
 
-	public void setExample(Map<String, String> example) {
+	public void setExample(List<String> example) {
 		this.example = example;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Example [entry=");
+		builder.append(entry);
+		builder.append(", example=");
+		builder.append(example);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
 }

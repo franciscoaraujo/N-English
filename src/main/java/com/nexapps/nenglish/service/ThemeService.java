@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.nexapps.nenglish.domain.Reference;
+import com.nexapps.nenglish.domain.Theme;
 import com.squareup.okhttp.Response;
 
 @Service
-public class ReferenceService {
+public class ThemeService {
 
-	@Value("${url.reference}")
+	@Value("${url.theme}")
 	private String url;
 
 	@Value("${access.twinword.host}")
@@ -26,11 +26,12 @@ public class ReferenceService {
 	@Autowired
 	private Connection conn;
 
-	public Reference request(String uri) throws JsonSyntaxException, IOException {
+	public Theme request(String uri) throws JsonSyntaxException, IOException {
 		Response response = conn.connection(url + uri, host, key);
 		Gson gson = new Gson();
 		String obj = response.body().string();
-		Reference reference = gson.fromJson(obj, Reference.class);
-		return reference;
+		Theme theme = (Theme) gson.fromJson(obj, Theme.class);
+		return theme;
 	}
+	
 }
