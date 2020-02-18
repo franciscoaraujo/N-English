@@ -13,7 +13,7 @@ import com.squareup.okhttp.Response;
 
 @Service
 public class AssociationService {
-
+	
 	@Value("${url.association}")
 	private String url;
 	
@@ -22,7 +22,6 @@ public class AssociationService {
 	
 	@Value("${access.twinword.key}")
 	private String key;
-	
 	
 	@Autowired
 	private Connection conn;
