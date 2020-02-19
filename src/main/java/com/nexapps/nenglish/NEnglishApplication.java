@@ -8,11 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.nexapps.nenglish.domain.Association;
 import com.nexapps.nenglish.domain.Definition;
 import com.nexapps.nenglish.domain.Example;
+import com.nexapps.nenglish.domain.Pronunciations;
 import com.nexapps.nenglish.domain.Reference;
 import com.nexapps.nenglish.domain.Theme;
 import com.nexapps.nenglish.service.AssociationService;
 import com.nexapps.nenglish.service.DefinitionService;
 import com.nexapps.nenglish.service.ExampleService;
+import com.nexapps.nenglish.service.LinguaRobotService;
 import com.nexapps.nenglish.service.ReferenceService;
 import com.nexapps.nenglish.service.ThemeService;
 
@@ -33,20 +35,22 @@ public class NEnglishApplication implements CommandLineRunner {
 
 	@Autowired
 	private ReferenceService rService;
-
+	
+	@Autowired
+	private LinguaRobotService lService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(NEnglishApplication.class, args);
 	}
 
-	private final String strPesquisa = "mask";
+	private final String strPesquisa = "root";
 
 	@Override
 	public void run(String... args) throws Exception {
 
-		Association association = aService.request(strPesquisa);
-		
-		System.out.println(association);
-
+//		Association association = aService.request(strPesquisa);
+//		System.out.println(association);
+//
 //		Definition definition = dService.request(strPesquisa);
 //		System.out.println(definition);
 //
@@ -58,6 +62,9 @@ public class NEnglishApplication implements CommandLineRunner {
 //
 //		Reference reference = rService.request(strPesquisa);
 //		System.out.println(reference);
+		
+		Pronunciations linguaRobot = lService.request(strPesquisa);
+		System.out.println(linguaRobot);
 
 	}
 
