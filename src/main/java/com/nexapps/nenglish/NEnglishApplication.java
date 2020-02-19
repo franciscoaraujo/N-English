@@ -21,29 +21,29 @@ import com.nexapps.nenglish.service.ThemeService;
 @SpringBootApplication
 public class NEnglishApplication implements CommandLineRunner {
 
-	@Autowired
-	private AssociationService aService;
-
-	@Autowired
-	private DefinitionService dService;
-
-	@Autowired
-	private ExampleService eService;
-
-	@Autowired
-	private ThemeService tService;
-
-	@Autowired
-	private ReferenceService rService;
-	
-	@Autowired
-	private LinguaRobotService lService;
-	
+//	@Autowired
+//	private AssociationService aService;
+//
+//	@Autowired
+//	private DefinitionService dService;
+//
+//	@Autowired
+//	private ExampleService eService;
+//
+//	@Autowired
+//	private ThemeService tService;
+//
+//	@Autowired
+//	private ReferenceService rService;
+//	
+//	@Autowired
+//	private LinguaRobotService lService;
+//	
 	public static void main(String[] args) {
 		SpringApplication.run(NEnglishApplication.class, args);
 	}
 
-	private final String strPesquisa = "root";
+//	private final String strPesquisa = "root";
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -62,9 +62,9 @@ public class NEnglishApplication implements CommandLineRunner {
 //
 //		Reference reference = rService.request(strPesquisa);
 //		System.out.println(reference);
-		
-		Pronunciations linguaRobot = lService.request(strPesquisa);
-		System.out.println(linguaRobot);
+//		
+//		Pronunciations linguaRobot = lService.request(strPesquisa);
+//		System.out.println(linguaRobot);
 
 	}
 
