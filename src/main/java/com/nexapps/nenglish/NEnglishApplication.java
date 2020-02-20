@@ -19,7 +19,7 @@ import com.nexapps.nenglish.service.ReferenceService;
 import com.nexapps.nenglish.service.ThemeService;
 
 @SpringBootApplication
-public class NEnglishApplication implements CommandLineRunner {
+public class NEnglishApplication /*implements CommandLineRunner*/ {
 
 //	@Autowired
 //	private AssociationService aService;
@@ -45,8 +45,8 @@ public class NEnglishApplication implements CommandLineRunner {
 
 //	private final String strPesquisa = "root";
 
-	@Override
-	public void run(String... args) throws Exception {
+	//@Override
+	//public void run(String... args) throws Exception {
 
 //		Association association = aService.request(strPesquisa);
 //		System.out.println(association);
@@ -66,6 +66,6 @@ public class NEnglishApplication implements CommandLineRunner {
 //		Pronunciations linguaRobot = lService.request(strPesquisa);
 //		System.out.println(linguaRobot);
 
-	}
+//	}
 
 }

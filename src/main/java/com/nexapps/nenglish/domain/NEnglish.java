@@ -13,11 +13,13 @@ public class NEnglish implements Serializable {
 	private Reference reference;
 	private Theme theme;
 	
-	
+	public NEnglish() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public NEnglish(Association association, Definition definition, Example example, Pronunciations pronunciations,
 			Reference reference, Theme theme) {
-		super();
+		
 		this.association = association;
 		this.definition = definition;
 		this.example = example;
@@ -25,7 +27,14 @@ public class NEnglish implements Serializable {
 		this.reference = reference;
 		this.theme = theme;
 	}
+	
+	
+	public NEnglish(Association association) {
+		
+		this.association = association;
+	}
 
+	
 	public Association getAssociation() {
 		return association;
 	}
