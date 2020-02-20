@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.JsonSyntaxException;
 import com.nexapps.nenglish.domain.Association;
+import com.nexapps.nenglish.domain.Definition;
 import com.nexapps.nenglish.domain.Example;
 import com.nexapps.nenglish.domain.NEnglish;
 import com.nexapps.nenglish.domain.Pronunciations;
@@ -50,13 +51,13 @@ public class NEnglishResource {
 	public ResponseEntity<NEnglish> getRequest(@PathVariable(value = "word") String word)
 			throws JsonSyntaxException, IOException {
 		NEnglish nEnglish = new NEnglish();
-
+		Definition def = dService.request(word);
 		Association assoc = aService.request(word);
 		Example exm = eService.request(word);
 		Pronunciations pronum = lService.request(word);
 		Reference ref = rService.request(word);
 		Theme theme = tService.request(word);
-		
+		nEnglish.setDefinition(def);
 		nEnglish.setAssociation(assoc);
 		nEnglish.setExample(exm);
 		nEnglish.setPronunciations(pronum);
